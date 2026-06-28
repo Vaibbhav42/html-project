@@ -1,0 +1,307 @@
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.top-navbar{
+
+    height:68px;
+
+    background:#ffffff;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+
+    padding:0 24px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:16px;
+
+}
+
+/* ==========================================
+   BREADCRUMB
+========================================== */
+
+.breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:15px;
+
+    color:#6B7280;
+
+}
+
+.breadcrumb i{
+
+    color:#4F6EF7;
+
+    font-size:16px;
+
+}
+
+.breadcrumb span{
+
+    color:#6B7280;
+
+    font-weight:500;
+
+}
+
+.breadcrumb a{
+
+    color:#4F6EF7;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.breadcrumb a:hover{
+
+    color:#3557f3;
+
+}
+
+/* ==========================================
+   PAGE TITLE
+========================================== */
+
+.page-title{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.page-title h2{
+
+    font-size:24px;
+
+    font-weight:600;
+
+    color:#1F2937;
+
+    margin-bottom:4px;
+
+}
+
+.page-title p{
+
+    font-size:14px;
+
+    color:#6B7280;
+
+}
+
+/* ==========================================
+   USER PROFILE
+========================================== */
+
+.top-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.user-details{
+
+    text-align:right;
+
+}
+
+.user-details h4{
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#1F2937;
+
+    margin-bottom:3px;
+
+}
+
+.user-details span{
+
+    font-size:14px;
+
+    color:#6B7280;
+
+}
+
+.top-profile img{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid #E5E7EB;
+
+}
+
+/* ==========================================
+   NAVBAR ACTIONS
+========================================== */
+
+.navbar-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.nav-icon{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:10px;
+
+    background:#F9FAFB;
+
+    border:1px solid #E5E7EB;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.nav-icon i{
+
+    color:#6B7280;
+
+    font-size:18px;
+
+}
+
+.nav-icon:hover{
+
+    background:#4F6EF7;
+
+    border-color:#4F6EF7;
+
+}
+
+.nav-icon:hover i{
+
+    color:#ffffff;
+
+}
+
+/* ==========================================
+   USER MENU
+========================================== */
+
+.user-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+}
+
+.user-menu:hover .user-details h4{
+
+    color:#4F6EF7;
+
+}
+
+.user-menu:hover img{
+
+    border-color:#4F6EF7;
+
+}
+
+/* ==========================================
+   SEARCH BAR (Optional Navbar Search)
+========================================== */
+
+.nav-search{
+
+    width:300px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:0 15px;
+
+    height:42px;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:8px;
+
+    background:#ffffff;
+
+}
+
+.nav-search i{
+
+    color:#9CA3AF;
+
+}
+
+.nav-search input{
+
+    width:100%;
+
+    border:none;
+
+    background:transparent;
+
+    outline:none;
+
+    font-size:14px;
+
+}
+
+/* ==========================================
+   SHADOW EFFECT
+========================================== */
+
+.top-navbar:hover{
+
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}

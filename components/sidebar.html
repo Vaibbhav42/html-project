@@ -1,0 +1,57 @@
+<aside class="sidebar">
+    <div class="logo">
+        <div class="logo-left">
+            <i class="fa-solid fa-pen-ruler"></i>
+            <h3>Frontend Task</h3>
+        </div>
+        <i class="fa-solid fa-bars menu-icon"></i>
+    </div>
+
+    <nav class="sidebar-menu">
+        <ul>
+            <li class="nav-item" data-page="campaign">
+                <a href="index.html">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>Campaign</span>
+                </a>
+            </li>
+            <li class="nav-item" data-page="new-campaign">
+                <a href="new-campaign.html">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>New Campaign</span>
+                </a>
+            </li>
+            <li class="nav-item" data-page="mapping">
+                <a href="campaign-mapping.html">
+                    <i class="fa-solid fa-table"></i>
+                    <span>Mapping</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+        <div class="profile-card">
+            <img src="images/profile.jpg" alt="Profile">
+            <div class="profile-info">
+                <h4>John Doe</h4>
+                <span>Admin</span>
+                <p>johndoe@gmail.com</p>
+            </div>
+            <a href="#" class="logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+        </div>
+
+        <div class="theme-switch">
+            <button class="theme-btn active" id="lightThemeBtn" type="button" onclick="setTheme('light')">
+                <i class="fa-regular fa-sun"></i>
+                Light
+            </button>
+            <button class="theme-btn" id="darkThemeBtn" type="button" onclick="setTheme('dark')">
+                <i class="fa-regular fa-moon"></i>
+                Dark
+            </button>
+        </div>
+    </div>
+</aside>

@@ -1,0 +1,324 @@
+/* ==========================================
+   BUTTON STYLES
+========================================== */
+
+/* Base Button */
+
+.primary-btn,
+.secondary-btn,
+.theme-btn,
+.icon-btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    padding:12px 24px;
+
+    border:none;
+    border-radius:8px;
+
+    font-family:'Inter',sans-serif;
+    font-size:15px;
+    font-weight:500;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+}
+
+/* ==========================================
+   PRIMARY BUTTON
+========================================== */
+
+.primary-btn{
+
+    background:#4F6EF7;
+    color:#ffffff;
+
+}
+
+.primary-btn:hover{
+
+    background:#3557F3;
+
+}
+
+.primary-btn:active{
+
+    transform:scale(.98);
+
+}
+
+.primary-btn:focus{
+
+    outline:2px solid rgba(79,110,247,.25);
+
+}
+
+/* ==========================================
+   SECONDARY BUTTON
+========================================== */
+
+.secondary-btn{
+
+    background:#ffffff;
+
+    color:#4F6EF7;
+
+    border:1px solid #4F6EF7;
+
+}
+
+.secondary-btn:hover{
+
+    background:#4F6EF7;
+
+    color:#ffffff;
+
+}
+
+.secondary-btn:active{
+
+    transform:scale(.98);
+
+}
+
+/* ==========================================
+   OUTLINE BUTTON
+========================================== */
+
+.outline-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:12px 24px;
+
+    border:1px solid #D1D5DB;
+
+    border-radius:8px;
+
+    background:#ffffff;
+
+    color:#374151;
+
+    transition:.3s;
+
+    text-decoration:none;
+
+}
+
+.outline-btn:hover{
+
+    background:#F3F4F6;
+
+}
+
+/* ==========================================
+   ICON BUTTON
+========================================== */
+
+.icon-btn{
+
+    width:42px;
+
+    height:42px;
+
+    padding:0;
+
+    background:#ffffff;
+
+    border:1px solid #E5E7EB;
+
+    color:#6B7280;
+
+}
+
+.icon-btn:hover{
+
+    background:#4F6EF7;
+
+    color:#ffffff;
+
+    border-color:#4F6EF7;
+
+}
+
+/* ==========================================
+   LOGOUT BUTTON
+========================================== */
+
+.logout{
+
+    width:40px;
+
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:8px;
+
+    background:#EEF2FF;
+
+    color:#4F6EF7;
+
+    transition:.3s;
+
+    text-decoration:none;
+
+}
+
+.logout:hover{
+
+    background:#4F6EF7;
+
+    color:#ffffff;
+
+}
+
+/* ==========================================
+   THEME BUTTON
+========================================== */
+
+.theme-btn{
+
+    flex:1;
+
+    background:transparent;
+
+    color:#6B7280;
+
+    border-radius:8px;
+
+    padding:10px 0;
+
+}
+
+.theme-btn.active{
+
+    background:#ffffff;
+
+    color:#4F6EF7;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.08);
+
+}
+
+.theme-btn:hover{
+
+    background:#ffffff;
+
+}
+
+/* ==========================================
+   DISABLED BUTTON
+========================================== */
+
+.primary-btn:disabled,
+.secondary-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+/* ==========================================
+   BUTTON GROUP
+========================================== */
+
+.button-group{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+/* ==========================================
+   FORM BUTTON AREA
+========================================== */
+
+.form-buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+/* ==========================================
+   FLOATING BUTTON (Optional)
+========================================== */
+
+.floating-btn{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:#4F6EF7;
+
+    color:#ffffff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    box-shadow:0 10px 25px rgba(79,110,247,.35);
+
+    transition:.3s;
+
+}
+
+.floating-btn:hover{
+
+    background:#3557F3;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   BUTTON ICON
+========================================== */
+
+.primary-btn i,
+.secondary-btn i,
+.outline-btn i{
+
+    font-size:14px;
+
+}
