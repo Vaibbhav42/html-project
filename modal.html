@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Campaign Modal</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page-title="Modal" data-active-page="modal">
+
+<div class="container">
+    <div id="sidebar-container"></div>
+
+    <main class="main-content">
+        <div id="navbar-container"></div>
+
+        <section class="content-area">
+            <div class="modal-backdrop">
+                <div class="workflow-modal">
+                    <div class="modal-header">
+                        <div>
+                            <h2>Create New Campaign</h2>
+                            <p>Select the workflow that best fits your campaign.</p>
+                        </div>
+                        <button class="close-btn">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="workflow-card active">
+                            <div class="workflow-top">
+                                <div class="workflow-icon">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                </div>
+                                <div class="workflow-check">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                            </div>
+                            <h3>Campaign Workflow</h3>
+                            <p>Build multi-step outreach campaigns with LinkedIn search, CSV import and automated prospect targeting.</p>
+                            <span class="workflow-tag">Recommended</span>
+                        </div>
+
+                        <div class="workflow-card disabled">
+                            <div class="workflow-top">
+                                <div class="workflow-icon">
+                                    <i class="fa-solid fa-headset"></i>
+                                </div>
+                            </div>
+                            <h3>Voice AI Agent</h3>
+                            <p>AI-powered calling workflow for inbound and outbound conversations.</p>
+                            <span class="coming-soon">Coming Soon</span>
+                        </div>
+
+                        <div class="workflow-card disabled">
+                            <div class="workflow-top">
+                                <div class="workflow-icon">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                            </div>
+                            <h3>WhatsApp Workflow</h3>
+                            <p>Launch WhatsApp campaigns and automate customer engagement.</p>
+                            <span class="coming-soon">Coming Soon</span>
+                        </div>
+
+                        <div class="workflow-card disabled">
+                            <div class="workflow-top">
+                                <div class="workflow-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                            </div>
+                            <h3>Email Workflow</h3>
+                            <p>Create email outreach campaigns with tracking, templates and analytics.</p>
+                            <span class="coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="outline-btn">Cancel</button>
+                        <a href="campaign.html" class="primary-btn">Continue</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="components/layout-loader.js"></script>
+</body>
+</html>

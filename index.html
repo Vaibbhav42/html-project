@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Task - Campaign</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo">
+
+            <div class="logo-left">
+                <i class="fa-solid fa-pen-ruler"></i>
+                <h3>Frontend Task</h3>
+            </div>
+
+            <i class="fa-regular fa-circle-dot menu-icon"></i>
+
+        </div>
+
+
+        <!-- Menu -->
+
+        <nav class="sidebar-menu">
+
+            <ul>
+
+                <li class="active">
+
+                    <a href="index.html">
+
+                        <i class="fa-solid fa-bullhorn"></i>
+
+                        <span>Campaign</span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+
+        <!-- Footer -->
+
+        <div class="sidebar-footer">
+
+            <div class="profile-card">
+
+                <img src="images/profile.jpg" alt="Profile">
+
+                <div class="profile-info">
+
+                    <h4>John Doe</h4>
+
+                    <span>Admin</span>
+
+                    <p>johndoe@gmail.com</p>
+
+                </div>
+
+                <a href="#" class="logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="theme-switch">
+
+                <button class="theme-btn active">
+
+                    <i class="fa-regular fa-sun"></i>
+
+                    Light
+
+                </button>
+
+                <button class="theme-btn">
+
+                    <i class="fa-regular fa-moon"></i>
+
+                    Dark
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+
+
+    <!-- ================= Main ================= -->
+
+    <main class="main-content">
+
+        <!-- Top Navbar -->
+
+        <header class="top-navbar">
+
+            <div class="breadcrumb">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span> > </span>
+
+                <span>Campaign</span>
+
+            </div>
+
+
+
+            <div class="top-profile">
+
+                <div class="user-details">
+
+                    <h4>John Doe</h4>
+
+                    <span>Admin</span>
+
+                </div>
+
+                <img src="images/profile.jpg" alt="User">
+
+            </div>
+
+        </header>
+
+
+
+        <!-- Content -->
+
+        <section class="content-area">
+
+            <!-- Filter -->
+
+            <div class="filter-bar">
+
+                <select>
+
+                    <option>All</option>
+
+                    <option>Running</option>
+
+                    <option>Completed</option>
+
+                </select>
+
+
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Empty State -->
+
+            <div class="empty-state">
+
+                <img
+                    src="images/empty-state.png"
+                    alt="Empty">
+
+                <a href="new-campaign.html" class="primary-btn">
+
+                    New Campaign
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

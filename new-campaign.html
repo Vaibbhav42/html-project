@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Select Workflow Mode</title>
+
+</head>
+
+<body style="margin:0;
+background:#ececec;
+font-family:Inter,Segoe UI,Arial,sans-serif;
+overflow:hidden;">
+
+    <!-- Background -->
+
+    <div style="
+        position:fixed;
+        inset:0;
+        background:#f6f8fc;
+        filter:blur(3px);
+        opacity:.85;">
+
+        <!-- Sidebar -->
+
+        <div style="
+            width:220px;
+            height:100%;
+            background:#ffffff;
+            position:absolute;
+            left:0;
+            top:0;
+            border-right:1px solid #e6e8ef;">
+
+            <div style="
+                padding:20px;
+                font-size:22px;
+                font-weight:700;
+                color:#2563eb;">
+                IntraClix
+            </div>
+
+            <div style="
+                margin:20px;
+                background:#3466ff;
+                color:#fff;
+                padding:14px;
+                border-radius:8px;
+                font-size:14px;">
+                Campaigns
+            </div>
+
+            <div style="padding:14px 22px;color:#777;">Dashboard</div>
+
+            <div style="padding:14px 22px;color:#777;">Contacts</div>
+
+            <div style="padding:14px 22px;color:#777;">Tasks</div>
+
+            <div style="padding:14px 22px;color:#777;">Settings</div>
+
+        </div>
+
+        <!-- Navbar -->
+
+        <div style="
+            position:absolute;
+            left:220px;
+            right:0;
+            top:0;
+            height:72px;
+            background:#fff;
+            border-bottom:1px solid #ececec;">
+
+            <div style="
+                width:240px;
+                height:40px;
+                background:#f4f5f8;
+                border-radius:8px;
+                margin:16px 25px;">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Overlay -->
+
+    <div style="
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.18);
+        display:flex;
+        justify-content:center;
+        align-items:center;">
+
+        <!-- Modal -->
+
+        <div style="
+            width:640px;
+            background:#ffffff;
+            border-radius:8px;
+            overflow:hidden;
+            box-shadow:0 12px 40px rgba(0,0,0,.22);">
+
+            <!-- Header -->
+
+            <div style="
+                padding:18px 30px 10px;
+                position:relative;
+                border-bottom:1px solid #ececec;">
+
+                <div style="
+                    font-size:22px;
+                    font-weight:600;
+                    color:#2d3748;">
+                    Select Workflow Mode
+                </div>
+
+                <div style="
+                    margin-top:6px;
+                    font-size:14px;
+                    color:#7a7f8c;">
+                    Choose how you want your campaign to behave
+                </div>
+
+                <!-- Close -->
+
+                <div style="
+                    position:absolute;
+                    right:18px;
+                    top:18px;
+                    width:28px;
+                    height:28px;
+                    border:1px solid #cfd5e2;
+                    border-radius:50%;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    color:#777;
+                    font-size:16px;
+                    cursor:pointer;">
+                    ×
+                </div>
+
+            </div>
+
+            <!-- Body -->
+
+            <div style="padding:18px 30px;">
+
+                <!-- Advanced Card -->
+
+                <div style="
+                    border:1.5px solid #d9e3ff;
+                    background:#f7f9ff;
+                    border-radius:8px;
+                    padding:22px;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;">
+
+                    <!-- Left -->
+
+                    <div style="
+                        display:flex;
+                        align-items:flex-start;">
+
+                        <!-- Radio -->
+
+                        <div style="
+                            width:18px;
+                            height:18px;
+                            border-radius:50%;
+                            background:#3466ff;
+                            display:flex;
+                            justify-content:center;
+                            align-items:center;
+                            margin-right:16px;
+                            margin-top:4px;">
+
+                            <div style="
+                                width:8px;
+                                height:8px;
+                                background:#fff;
+                                border-radius:50%;">
+                            </div>
+
+                        </div>
+
+                        <!-- Text -->
+
+                        <div>
+
+                            <div style="
+                                display:flex;
+                                align-items:center;
+                                gap:10px;">
+
+                                <span style="
+                                    font-size:17px;
+                                    font-weight:600;
+                                    color:#2c3445;">
+                                    Advanced Workflow
+                                </span>
+
+                                <span style="
+                                    background:#dcfce7;
+                                    color:#16a34a;
+                                    font-size:12px;
+                                    padding:3px 8px;
+                                    border-radius:20px;
+                                    font-weight:600;">
+                                    Recommended
+                                </span>
+
+                            </div>
+
+                            <div style="
+                                margin-top:8px;
+                                color:#666;
+                                font-size:14px;">
+                                Best for high-volume outreach
+                            </div>
+
+                            <div style="
+                                margin-top:14px;
+                                color:#8b8f98;
+                                font-size:13px;">
+
+                                ● Conditional logic
+
+                                <span style="margin:0 10px;">●</span>
+
+                                Multiple paths
+
+                                <span style="margin:0 10px;">●</span>
+
+                                More control
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Illustration -->
+
+                    <div style="
+                        width:110px;
+                        height:80px;
+                        border-radius:6px;
+                        background:linear-gradient(135deg,#cde5ff,#eef7ff);
+                        display:flex;
+                        justify-content:center;
+                        align-items:center;">
+
+                        <div style="
+                            width:58px;
+                            height:40px;
+                            border:3px solid #56a7ff;
+                            border-radius:4px;
+                            position:relative;">
+
+                            <div style="
+                                position:absolute;
+                                left:-18px;
+                                top:12px;
+                                width:16px;
+                                height:12px;
+                                background:#8cc8ff;
+                                border-radius:3px;">
+                            </div>
+
+                            <div style="
+                                position:absolute;
+                                right:-18px;
+                                top:12px;
+                                width:16px;
+                                height:12px;
+                                background:#8cc8ff;
+                                border-radius:3px;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Standard Workflow Card -->
+
+                <div style="
+                    margin-top:18px;
+                    border:1px solid #e6e9ef;
+                    background:#ffffff;
+                    border-radius:8px;
+                    padding:22px;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;">
+
+                    <!-- Left -->
+
+                    <div style="display:flex;align-items:flex-start;">
+
+                        <!-- Radio -->
+
+                        <div style="
+                            width:18px;
+                            height:18px;
+                            border:2px solid #cfd5e2;
+                            border-radius:50%;
+                            box-sizing:border-box;
+                            margin-right:16px;
+                            margin-top:4px;">
+                        </div>
+
+                        <!-- Text -->
+
+                        <div>
+
+                            <div style="
+                                font-size:17px;
+                                font-weight:600;
+                                color:#2d3748;">
+
+                                Standard Workflow
+
+                            </div>
+
+                            <div style="
+                                margin-top:8px;
+                                font-size:14px;
+                                color:#6b7280;">
+
+                                Best for beginners
+
+                            </div>
+
+                            <div style="
+                                margin-top:14px;
+                                font-size:13px;
+                                color:#8b8f98;">
+
+                                ● Linear steps
+
+                                <span style="margin:0 10px;">●</span>
+
+                                No conditions
+
+                                <span style="margin:0 10px;">●</span>
+
+                                Easy Setup
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Illustration -->
+
+                    <div style="
+                        width:110px;
+                        height:80px;
+                        border-radius:6px;
+                        background:linear-gradient(135deg,#eef7ff,#d6ebff);
+                        display:flex;
+                        justify-content:center;
+                        align-items:center;">
+
+                        <div style="
+                            width:56px;
+                            height:42px;
+                            border-radius:5px;
+                            border:3px solid #59aafc;
+                            position:relative;">
+
+                            <div style="
+                                position:absolute;
+                                left:6px;
+                                top:6px;
+                                width:42px;
+                                height:5px;
+                                background:#7fc0ff;">
+                            </div>
+
+                            <div style="
+                                position:absolute;
+                                left:6px;
+                                top:16px;
+                                width:28px;
+                                height:5px;
+                                background:#9fd1ff;">
+                            </div>
+
+                            <div style="
+                                position:absolute;
+                                left:6px;
+                                top:27px;
+                                width:38px;
+                                height:5px;
+                                background:#7fc0ff;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+
+                <div style="
+                    display:flex;
+                    justify-content:flex-end;
+                    align-items:center;
+                    margin-top:22px;">
+
+                    <!-- Close Button -->
+
+                    <button style="
+                                width:84px;
+                                height:40px;
+                                border:none;
+                                border-radius:6px;
+                                background:#ececec;
+                                cursor:pointer;
+                                margin-right:12px;">
+
+                        <a href="index.html" style="
+                                display:flex;
+                                justify-content:center;
+                                align-items:center;
+                                width:100%;
+                                height:100%;
+                                color:#6b7280;
+                                font-size:14px;
+                                text-decoration:none;">
+                            Close
+                        </a>
+
+                    </button>
+
+                    <!-- Next Button -->
+
+                    <a href="linkedin.html" style="
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    width:84px;
+    height:40px;
+    border:none;
+    border-radius:6px;
+    background:#3466ff;
+    color:#ffffff;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(52,102,255,.35);
+">
+                        Next
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

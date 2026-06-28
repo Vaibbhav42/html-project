@@ -1,0 +1,521 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload CSV File</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        .advance-shell {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .stepper {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 14px 16px;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #6B7280;
+        }
+
+        .step-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F3F4F6;
+            color: #4F6EF7;
+        }
+
+        .step-item.active .step-icon {
+            background: #4F6EF7;
+            color: #fff;
+        }
+
+        .step-item.active {
+            color: #1F2937;
+            font-weight: 600;
+        }
+
+        .step-separator {
+            color: #9CA3AF;
+            font-size: 18px;
+        }
+
+        .panel-card {
+            background: #fff;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .panel-header {
+            margin-bottom: 10px;
+        }
+
+        .panel-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1F2937;
+            margin-bottom: 6px;
+        }
+
+        .panel-header p {
+            font-size: 14px;
+            color: #6B7280;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .method-card {
+            position: relative;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 16px;
+            background: #fff;
+            min-height: 170px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .method-card.selected {
+            border-color: #3466FF;
+        }
+
+        .method-card.selected .method-tick-icon {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+            background: #3466FF;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .method-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #EEF2FF;
+            color: #4F6EF7;
+            font-size: 18px;
+        }
+
+        .method-card.selected {
+            border-color: #3466FF;
+        }
+
+        .method-card.selected .method-icon {
+            background: #EEF3FF;
+            color: #3466FF;
+        }
+
+        .method-card h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1F2937;
+            line-height: 1.3;
+        }
+
+        .method-card p {
+            font-size: 13px;
+            color: #6B7280;
+            line-height: 20px;
+            margin: 0;
+        }
+
+        .method-card .small-link {
+            margin-top: auto;
+            color: #3466FF;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .upload-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .upload-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 18px;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .upload-header .label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .upload-header .label span {
+            font-size: 15px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .upload-header .label .subtext {
+            font-size: 12px;
+            color: #8A94A6;
+            font-weight: 600;
+        }
+
+        .dropzone {
+            margin-top: 0;
+            border: 2px dashed #B8C7FF;
+            border-radius: 12px;
+            background: #FBFCFF;
+            min-height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 18px;
+        }
+
+        .drop-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: #EEF3FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3466FF;
+            font-size: 22px;
+            margin: 0 auto;
+        }
+
+        .dropzone-title {
+            margin-top: 18px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #3466FF;
+        }
+
+        .dropzone-title span {
+            color: #6B7280;
+            font-weight: 500;
+        }
+
+        .dropzone-text {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #8B95A7;
+            line-height: 22px;
+        }
+
+        .download-sample {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #3466FF;
+            cursor: pointer;
+            width: max-content;
+        }
+
+        .footer-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 18px;
+        }
+
+        .upload-status {
+            font-size: 14px;
+            color: #4F6EF7;
+            margin-top: 8px;
+        }
+
+        .upload-status.error {
+            color: #DC2626;
+        }
+
+        .primary-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 44px;
+            padding: 0 20px;
+            border-radius: 10px;
+            background: #4F6EF7;
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .content-area {
+            overflow-y: auto;
+            min-height: 0;
+        }
+
+        .primary-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 980px) {
+            .method-grid {
+                grid-template-columns: repeat(2, minmax(180px, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div>
+                <div class="logo">
+                    <div class="logo-left">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                        <h3>Frontend Task</h3>
+                    </div>
+                    <i class="fa-regular fa-circle-dot menu-icon"></i>
+                </div>
+
+                <nav class="sidebar-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="index.html">
+                                <i class="fa-solid fa-bullhorn"></i>
+                                <span>Campaign</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="profile-card">
+                    <img src="images/profile.jpg" alt="Profile">
+                    <div class="profile-info">
+                        <h4>John Doe</h4>
+                        <span>Admin</span>
+                        <p>johndoe@gmail.com</p>
+                    </div>
+                    <a href="#" class="logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
+                </div>
+
+                <div class="theme-switch">
+                    <button class="theme-btn active">
+                        <i class="fa-regular fa-sun"></i>
+                        Light
+                    </button>
+                    <button class="theme-btn">
+                        <i class="fa-regular fa-moon"></i>
+                        Dark
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-navbar">
+                <div class="breadcrumb">
+                    <i class="fa-solid fa-house"></i>
+                    <span> > </span>
+                    <span>Campaign</span>
+                    <span> > </span>
+                    <span>Upload CSV</span>
+                </div>
+
+                <div class="top-profile">
+                    <div class="user-details">
+                        <h4>John Doe</h4>
+                        <span>Admin</span>
+                    </div>
+                    <img src="images/profile.jpg" alt="User">
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="advance-shell">
+                    <div class="stepper">
+                        <div class="step-item active">
+                            <div class="step-icon"><i class="fa-solid fa-list-check"></i></div>
+                            <span>Define Target Audience</span>
+                        </div>
+                        <div class="step-separator">›</div>
+                        <div class="step-item">
+                            <div class="step-icon"><i class="fa-solid fa-user"></i></div>
+                            <span>Sender Profiles</span>
+                        </div>
+                        <div class="step-separator">›</div>
+                        <div class="step-item">
+                            <div class="step-icon"><i class="fa-solid fa-gear"></i></div>
+                            <span>Settings</span>
+                        </div>
+                        <div class="step-separator">›</div>
+                        <div class="step-item">
+                            <div class="step-icon"><i class="fa-solid fa-chart-column"></i></div>
+                            <span>Stats</span>
+                        </div>
+                    </div>
+
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3>Choose Import Method</h3>
+                            <p>Select how you want to add profile data to your campaign.</p>
+                        </div>
+                        <div class="method-grid">
+                            <div class="method-card">
+                                <div class="method-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                                <h4>LinkedIn Search</h4>
+                                <p>Basic, Sales Nav, Post, Group or Event URL</p>
+                            </div>
+                            <div class="method-card selected">
+                                <div class="method-tick-icon"><i class="fa-solid fa-check"></i></div>
+                                <div class="method-icon"><i class="fa-solid fa-file-csv"></i></div>
+                                <h4>Upload CSV File</h4>
+                                <p>Upload LinkedIn profiles via CSV.</p>
+                                <div class="small-link">Download Sample</div>
+                            </div>
+                            <div class="method-card">
+                                <div class="method-icon"><i class="fa-solid fa-users"></i></div>
+                                <h4>Lookalike Audience</h4>
+                                <p>Upload your best profiles and let AI find their lookalikes.</p>
+                            </div>
+                            <div class="method-card" style="opacity:.65;background:#fafbff;">
+                                <div class="method-icon"><i class="fa-solid fa-link"></i></div>
+                                <h4>Inbound Webhook</h4>
+                                <p>Sync leads from Zapier, n8n or Make in real time.</p>
+                            </div>
+                        </div>
+
+                        <div class="upload-wrap">
+                            <div class="upload-header">
+                                <div class="label">
+                                    <div style="width:12px;height:12px;border:2px solid #3466ff;border-radius:50%;box-sizing:border-box;"></div>
+                                    <span>Upload CSV File</span>
+                                    <span class="subtext">Step 1 of 2</span>
+                                </div>
+                                <i class="fa-solid fa-angle-up" style="color:#9CA3AF;font-size:14px;"></i>
+                            </div>
+
+                            <div class="dropzone" id="dropzone">
+                                <div>
+                                    <div class="drop-icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
+                                    <div class="dropzone-title">Drag a File <span>or</span> <span class="browse-text">click to browse</span></div>
+                                    <div class="dropzone-text">File with up to <b>100</b> rows works best</div>
+                                </div>
+                                <input type="file" id="csv-upload" accept=".csv" hidden>
+                            </div>
+
+                            <div id="upload-status" class="upload-status">No file selected.</div>
+
+                            <div class="download-sample">
+                                <i class="fa-solid fa-download"></i>
+                                Download a sample file
+                            </div>
+                        </div>
+
+                        <div class="footer-actions">
+                            <button type="button" id="next-button" class="primary-btn disabled" disabled>Next</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('csv-upload');
+        const nextButton = document.getElementById('next-button');
+        const uploadStatus = document.getElementById('upload-status');
+
+        function setNextEnabled(enabled) {
+            nextButton.disabled = !enabled;
+            nextButton.classList.toggle('disabled', !enabled);
+        }
+
+        function setStatus(message, isError = false) {
+            uploadStatus.textContent = message;
+            uploadStatus.classList.toggle('error', isError);
+        }
+
+        dropzone.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (!file) {
+                setNextEnabled(false);
+                setStatus('No file selected.', false);
+                return;
+            }
+            const isCsv = file.name.toLowerCase().endsWith('.csv');
+            if (isCsv) {
+                setNextEnabled(true);
+                setStatus(`CSV uploaded: ${file.name}`);
+            } else {
+                setNextEnabled(false);
+                setStatus('Please upload a valid .csv file.', true);
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (nextButton.disabled) return;
+            window.location.href = 'map.html';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign | Frontend Task</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body data-page-title="Campaign" data-active-page="campaign">
+
+<div class="container">
+    <div id="sidebar-container"></div>
+
+    <main class="main-content">
+        <div id="navbar-container"></div>
+
+        <section class="content-area">
+            <div class="filter-bar">
+                <select>
+                    <option>All</option>
+                    <option>Active</option>
+                    <option>Paused</option>
+                    <option>Completed</option>
+                </select>
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search Campaign">
+                </div>
+            </div>
+
+            <div class="empty-state">
+                <img src="images/empty-state.png" alt="Campaign">
+                <h2>No Campaign Found</h2>
+                <p>You haven't created any campaign yet. Click the button below to create your first campaign.</p>
+                <a href="new-campaign.html" class="primary-btn">New Campaign</a>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="components/layout-loader.js"></script>
+</body>
+</html>
