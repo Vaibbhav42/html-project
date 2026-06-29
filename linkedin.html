@@ -788,10 +788,30 @@ background:#fff;">
 display:flex;
 justify-content:flex-end;
 align-items:center;
+gap:10px;
 margin-top:20px;
 padding:20px 0;">
 
-                        <a href="uploadcsv.html" style="
+                        <!-- <a href="linkedin.html" style="
+       display:inline-flex;
+       justify-content:center;
+       align-items:center;
+       width:90px;
+       height:42px;
+       background:#ffffff;
+       color:#4F6EF7;
+       text-decoration:none;
+       border:1px solid #D1D5DB;
+       border-radius:8px;
+       font-size:14px;
+       font-weight:600;
+       transition:.3s;">
+
+                            Back
+
+                        </a> -->
+
+                        <a id="next-link" href="uploadcsv.html" style="
        display:inline-flex;
        justify-content:center;
        align-items:center;
@@ -837,6 +857,7 @@ padding:20px 0;">
         const modalMessage = document.getElementById('validation-message');
         const linkedinMethodCard = document.getElementById('linkedin-method-card');
         const pasteUrlSection = document.getElementById('paste-url-section');
+        const nextLink = document.getElementById('next-link');
         let closeTimer = null;
 
         function togglePasteUrlSection(forceOpen) {
@@ -879,6 +900,13 @@ padding:20px 0;">
                 }
             });
         });
+
+        if (nextLink) {
+            nextLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.location.href = 'uploadcsv.html';
+            });
+        }
 
         validateBtn.addEventListener('click', () => {
             const url = urlInput.value.trim();
