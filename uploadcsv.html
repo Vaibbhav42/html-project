@@ -76,10 +76,6 @@
             gap: 18px;
         }
 
-        .panel-header {
-            margin-bottom: 10px;
-        }
-
         .panel-header h3 {
             font-size: 18px;
             font-weight: 600;
@@ -142,15 +138,6 @@
             font-size: 18px;
         }
 
-        .method-card.selected {
-            border-color: #3466FF;
-        }
-
-        .method-card.selected .method-icon {
-            background: #EEF3FF;
-            color: #3466FF;
-        }
-
         .method-card h4 {
             font-size: 17px;
             font-weight: 600;
@@ -207,6 +194,14 @@
             font-weight: 600;
         }
 
+        .file-input {
+            width: 100%;
+            max-width: 340px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #6B7280;
+        }
+
         .dropzone {
             margin-top: 0;
             border: 2px dashed #B8C7FF;
@@ -218,6 +213,7 @@
             justify-content: center;
             text-align: center;
             padding: 18px;
+            cursor: pointer;
         }
 
         .drop-icon {
@@ -252,6 +248,12 @@
             line-height: 22px;
         }
 
+        .upload-status {
+            font-size: 14px;
+            color: #4F6EF7;
+            margin-top: 8px;
+        }
+
         .download-sample {
             display: flex;
             align-items: center;
@@ -265,17 +267,9 @@
         .footer-actions {
             display: flex;
             justify-content: flex-end;
+            gap: 10px;
+            align-items: center;
             margin-top: 18px;
-        }
-
-        .upload-status {
-            font-size: 14px;
-            color: #4F6EF7;
-            margin-top: 8px;
-        }
-
-        .upload-status.error {
-            color: #DC2626;
         }
 
         .primary-btn {
@@ -289,16 +283,20 @@
             color: #fff;
             font-weight: 600;
             text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .secondary-btn {
+            background: #fff;
+            color: #4F6EF7;
+            border: 1px solid #D1D5DB;
         }
 
         .content-area {
             overflow-y: auto;
             min-height: 0;
-        }
-
-        .primary-btn.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
         }
 
         @media (max-width: 980px) {
@@ -353,11 +351,11 @@
                 </div>
 
                 <div class="theme-switch">
-                    <button class="theme-btn active">
+                    <button class="theme-btn active" type="button">
                         <i class="fa-regular fa-sun"></i>
                         Light
                     </button>
-                    <button class="theme-btn">
+                    <button class="theme-btn" type="button">
                         <i class="fa-regular fa-moon"></i>
                         Dark
                     </button>
@@ -369,9 +367,9 @@
             <header class="top-navbar">
                 <div class="breadcrumb">
                     <i class="fa-solid fa-house"></i>
-                    <span> > </span>
+                    <span>&gt;</span>
                     <span>Campaign</span>
-                    <span> > </span>
+                    <span>&gt;</span>
                     <span>Upload CSV</span>
                 </div>
 
@@ -391,34 +389,36 @@
                             <div class="step-icon"><i class="fa-solid fa-list-check"></i></div>
                             <span>Define Target Audience</span>
                         </div>
-                        <div class="step-separator">›</div>
+                        <div class="step-separator">&rsaquo;</div>
                         <div class="step-item">
                             <div class="step-icon"><i class="fa-solid fa-user"></i></div>
                             <span>Sender Profiles</span>
                         </div>
-                        <div class="step-separator">›</div>
+                        <div class="step-separator">&rsaquo;</div>
                         <div class="step-item">
                             <div class="step-icon"><i class="fa-solid fa-gear"></i></div>
                             <span>Settings</span>
                         </div>
-                        <div class="step-separator">›</div>
+                        <div class="step-separator">&rsaquo;</div>
                         <div class="step-item">
                             <div class="step-icon"><i class="fa-solid fa-chart-column"></i></div>
                             <span>Stats</span>
                         </div>
                     </div>
 
-                    <div class="panel-card">
+                    <form class="panel-card" action="map.html" method="get">
                         <div class="panel-header">
                             <h3>Choose Import Method</h3>
                             <p>Select how you want to add profile data to your campaign.</p>
                         </div>
+
                         <div class="method-grid">
                             <div class="method-card">
                                 <div class="method-icon"><i class="fa-brands fa-linkedin-in"></i></div>
                                 <h4>LinkedIn Search</h4>
                                 <p>Basic, Sales Nav, Post, Group or Event URL</p>
                             </div>
+
                             <div class="method-card selected">
                                 <div class="method-tick-icon"><i class="fa-solid fa-check"></i></div>
                                 <div class="method-icon"><i class="fa-solid fa-file-csv"></i></div>
@@ -426,11 +426,13 @@
                                 <p>Upload LinkedIn profiles via CSV.</p>
                                 <div class="small-link">Download Sample</div>
                             </div>
+
                             <div class="method-card">
                                 <div class="method-icon"><i class="fa-solid fa-users"></i></div>
                                 <h4>Lookalike Audience</h4>
                                 <p>Upload your best profiles and let AI find their lookalikes.</p>
                             </div>
+
                             <div class="method-card" style="opacity:.65;background:#fafbff;">
                                 <div class="method-icon"><i class="fa-solid fa-link"></i></div>
                                 <h4>Inbound Webhook</h4>
@@ -438,7 +440,7 @@
                             </div>
                         </div>
 
-                        <div class="upload-wrap" id="upload-csv-section">
+                        <div class="upload-wrap">
                             <div class="upload-header">
                                 <div class="label">
                                     <div style="width:12px;height:12px;border:2px solid #3466ff;border-radius:50%;box-sizing:border-box;"></div>
@@ -448,16 +450,27 @@
                                 <i class="fa-solid fa-angle-up" style="color:#9CA3AF;font-size:14px;"></i>
                             </div>
 
-                            <div class="dropzone" id="dropzone">
+                            <label class="dropzone" for="csv-upload">
                                 <div>
-                                    <div class="drop-icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
-                                    <div class="dropzone-title">Drag a File <span>or</span> <span class="browse-text">click to browse</span></div>
-                                    <div class="dropzone-text">File with up to <b>100</b> rows works best</div>
-                                </div>
-                                <input type="file" id="csv-upload" accept=".csv" hidden>
-                            </div>
+                                    <div class="drop-icon">
+                                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                    </div>
 
-                            <div id="upload-status" class="upload-status">No file selected.</div>
+                                    <div class="dropzone-title">
+                                        Choose a File <span>or</span> <span class="browse-text">click to browse</span>
+                                    </div>
+
+                                    <div class="dropzone-text">
+                                        File with up to <b>100</b> rows works best
+                                    </div>
+
+                                    <input class="file-input" type="file" id="csv-upload" name="csv-upload" accept=".csv" required>
+                                </div>
+                            </label>
+
+                            <div class="upload-status">
+                                Please select a CSV file before clicking Next.
+                            </div>
 
                             <div class="download-sample">
                                 <i class="fa-solid fa-download"></i>
@@ -465,58 +478,15 @@
                             </div>
                         </div>
 
-                        <div class="footer-actions" style="display:flex;justify-content:flex-end;gap:10px;align-items:center;">
-                            <a href="linkedin.html" class="primary-btn" style="background:#fff;color:#4F6EF7;border:1px solid #D1D5DB;text-decoration:none;">Back</a>
-                            <button type="button" id="next-button" class="primary-btn disabled" disabled>Next</button>
+                        <div class="footer-actions">
+                            <a href="linkedin.html" class="primary-btn secondary-btn">Back</a>
+                            <button type="submit" class="primary-btn">Next</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </section>
         </main>
     </div>
-
-    <script>
-        const dropzone = document.getElementById('dropzone');
-        const fileInput = document.getElementById('csv-upload');
-        const nextButton = document.getElementById('next-button');
-        const uploadStatus = document.getElementById('upload-status');
-
-        function setNextEnabled(enabled) {
-            nextButton.disabled = !enabled;
-            nextButton.classList.toggle('disabled', !enabled);
-        }
-
-        function setStatus(message, isError = false) {
-            uploadStatus.textContent = message;
-            uploadStatus.classList.toggle('error', isError);
-        }
-
-        dropzone.addEventListener('click', () => {
-            fileInput.click();
-        });
-
-        fileInput.addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            if (!file) {
-                setNextEnabled(false);
-                setStatus('No file selected.', false);
-                return;
-            }
-            const isCsv = file.name.toLowerCase().endsWith('.csv');
-            if (isCsv) {
-                setNextEnabled(true);
-                setStatus(`CSV uploaded: ${file.name}`);
-            } else {
-                setNextEnabled(false);
-                setStatus('Please upload a valid .csv file.', true);
-            }
-        });
-
-        nextButton.addEventListener('click', () => {
-            if (nextButton.disabled) return;
-            window.location.href = 'map.html';
-        });
-    </script>
 </body>
 
 </html>
